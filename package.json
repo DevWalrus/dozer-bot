@@ -1,0 +1,19 @@
+{
+  "name": "dozer",
+  "version": "1.0.0",
+  "description": "A discord bot for FRC teams",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevWalrus/dozer-bot.git"
+  },
+  "author": "DevWalrus",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/DevWalrus/dozer-bot/issues"
+  },
+  "homepage": "https://github.com/DevWalrus/dozer-bot#readme"
+}
