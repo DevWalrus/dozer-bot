@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const Channel = require('../models/channel.js');
 const Guild = require('../models/guild.js');
-const Tools = require('../Tools/tools.js')
+const Tools = require('../tools/tools.js')
 
 module.exports = {
     data: new SlashCommandBuilder()
