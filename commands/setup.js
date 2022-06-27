@@ -26,6 +26,9 @@ module.exports = {
 			await interaction.guild.channels.cache
 				.find(channel => channel.id == rolesChannelEntry.discordId);
 
+        await rolesChannel.bulkDelete(3, true).catch(console.warn);
+        await rulesChannel.bulkDelete(1, true).catch(console.warn);
+
 		const guildRoles = interaction.guild.roles.cache;
 
 		const dtRole = guildRoles.find(role => role.name == 'Drive Team');

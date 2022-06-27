@@ -1,5 +1,7 @@
 const Reaction = require('../models/reaction.js');
 const Message = require('../models/message.js');
+const Channel = require('../models/channel.js');
+const Guild = require('../models/guild.js');
 
 module.exports.getReaction = async (reaction) => {
 
@@ -31,7 +33,7 @@ module.exports.updateMessageEntry = async (type, channelEntry, message) => {
     if (!messageEntry) {
         messageEntry = new Message({
             type: type,
-            id: message.discordId,
+            discordId: message.id,
             channel: channelEntry._id
         });
     } else {
@@ -72,4 +74,26 @@ module.exports.reactAll = async (roles, guildEntry, messageEntry, message) => {
     for (const entry of roles) {
         await this.react(entry[0], entry[1], guildEntry, messageEntry, message);
     }
+}
+
+module.exports.setChannel = async(type, channel) => {
+    
+    let guildEntry = await Guild.findOne({discordId: channel.guild.id});
+
+    let channelEntry = 
+        await Channel.findOne({type: type, guild: guildEntry._id});
+
+    console.log(channelEntry);
+    
+    if (channelEntry) {
+        channelEntry.discordId = channel.id;
+    } else {
+        channelEntry = new Channel({
+            type: type,
+            guild: guildEntry._id,
+            discordId: channel.id
+        })
+    }
+
+    channelEntry.save().catch(console.error);
 }

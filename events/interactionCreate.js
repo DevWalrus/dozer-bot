@@ -9,11 +9,6 @@ module.exports = {
 
             try {
                 await command.execute(interaction);
-                await interaction.reply(
-                    {
-                        content: 'Setup successful!',
-                        ephemeral: true
-                    });
             } catch (error) {
                 console.error(error);
                 await interaction.reply(
