@@ -1,0 +1,6 @@
+{
+	"clientId": "123456789126345678",
+	"guildId": "123456789126345678",
+	"token": "token-here",
+	"uri": "mongodb+srv://<user>:<password>@<server>.1kdbbm2.mongodb.net/<cluster>?retryWrites=true&w=majority"
+}
