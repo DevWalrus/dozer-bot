@@ -97,3 +97,18 @@ module.exports.setChannel = async(type, channel) => {
 
     channelEntry.save().catch(console.error);
 }
+
+module.exports.findMessage = async(guild, channelType, messageType) => {
+
+    let guildEntry = await Guild.findOne({discordId: guild.id});
+
+    let channelEntry = await Channel.findOne({type: channelType, guild: guildEntry._id});
+
+    let channel = await guild.channels.fetch(channelEntry.discordId);
+
+    let messageEntry = await Message.findOne({type: messageType, channel: channelEntry._id});
+
+    let message = await channel.messages.fetch(messageEntry.discordId);
+
+    return message;
+}
