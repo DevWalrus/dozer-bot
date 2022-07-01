@@ -2,8 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = new MessageEmbed()
     .setColor('#009cd7')
-    .setDescription('BITCH posting, take a minute to look at the \
-        following guidelines.')
+    .setDescription('Before posting, take a minute to look at the following guidelines.')
     .setTitle('Rules')
     .addFields(
         {

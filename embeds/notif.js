@@ -14,7 +14,7 @@ module.exports = {
                 FIRST blog is posted, and its TLDR, you can register here.\n \
                 If you join the Game Night Notifications, you will also have \
                 access to the Game Night Channel.')
-            .setTitle('Bithc')//.setTitle('Role Menu: Notification Settings')
+            .setTitle('Role Menu: Notification Settings')
             .addFields(
                 { 
                     name: 
